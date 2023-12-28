@@ -1,0 +1,23 @@
+<%- include('partials/header.ejs') %>
+
+
+<form method="post" action="/submit" class="create-form">
+    <div class="banner">
+      <h1>Create Blog</h1>
+    </div>
+    <div class="item">
+      <p>Blog Title</p>
+      <input type="text" name="blogtitle"/ required>
+    </div>
+    <div class="item">
+      <p>Blog description</p>
+      <textarea rows="10" name="blogdescription" required></textarea>
+    </div>
+    <div class="button-block">
+      <button type="submit"  class="create-btn">Submit</button>
+    </div>
+  </form>
+
+
+
+<%- include('partials/footer.ejs') %>

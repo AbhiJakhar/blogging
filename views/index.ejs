@@ -1,0 +1,66 @@
+<%- include('partials/header.ejs') %>
+   
+
+   <% if(titles.length==0) {%>
+    <div class="text-center noblog-cont">
+    <div class="row"> 
+    <div class="col-lg-4">
+         <h1 class="noblog-h1">No blogs to show. Create one?</h1>
+         <br>
+         <div class="d-grid gap-2 col-6 mx-auto">
+          <a href="/create">
+            <div class="d-grid gap-2">
+             <button class="btn btn-primary" type="button">Create Blog</button>
+            </div>
+          </a>
+         </div>
+    </div>
+    <div class="col-lg-8">
+      <img src="images/blog.jpg" alt="blog image here" class="noblog">
+    </div>
+    </div>
+    </div>
+      
+
+    <% } else { %>
+        <div class="container blogs-cont">
+    <ul list-style-type="none" >
+        <% for(var i=0;i<titles.length;i++){ %>
+        <li list-style-type="none">
+            <h2><%= titles[i] %></h2>
+            <br>
+            <p><%= description[i] %></p>
+            <br>
+        </li>
+        <% } %>
+    </ul>
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <a href="/create">
+          <div class="d-grid gap-2">
+           <button class="btn btn-secondary" type="button">Add Blog</button>
+          </div>
+        </a>
+       </div>
+    <div class="container blogs-cont">
+
+        <h3>Update or delete blog</h3>
+                
+        <form method="post" action="/updatepost" class="update-delete">
+        <label for="blognumber">Blog number to be updated:</label>
+        <input type="text" name="blogNumber" id="blognumber" / required>
+         <button class="btn btn-secondary" type="submit">Update</button>
+        </form>
+       
+       <form method="post" action="/delete" class="update-delete">
+        <label for="blognumber1">Blog number to be deleted:</label>
+        <input type="text" name="blogNumber" id="blognumber1" / required>
+        <button class="btn btn-secondary" type="submit">Delete</button>
+       </form>
+      </div>
+</div>
+<% } %>
+
+
+
+
+<%- include('partials/footer.ejs') %>

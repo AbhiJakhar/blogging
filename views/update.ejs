@@ -1,0 +1,24 @@
+<%- include('partials/header.ejs') %>
+
+
+<form method="post" action="/updatesubmit" ">
+    <div class="banner">
+      <h1>Update Blog <%= clickedIndex %></h1>
+    </div>
+    <div class="item">
+      <p>Blog Title</p>
+      <textarea rows="1" name="blogtitle" required><%= titles[clickedIndex-1] %></textarea>
+      
+    </div>
+    <div class="item">
+      <p>Blog description</p>
+      <textarea rows="10" name="blogdescription" required><%= description[clickedIndex-1] %></textarea>
+    </div>
+    <div class="button-block">
+      <button type="submit" href="/" class="create-btn">Submit</button>
+    </div>
+  </form>
+
+
+
+<%- include('partials/footer.ejs') %>
