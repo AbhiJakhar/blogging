@@ -31,6 +31,12 @@
             <br>
             <p><%= description[i] %></p>
             <br>
+            <form method="post" action="/updatepost" class="update-delete">
+            <button class="btn btn-secondary" value=<%=i%> name="updatebutton" type="submit" >Update</button>
+            </form>
+            <form method="post" action="/delete" class="update-delete">
+            <button class="btn btn-secondary" value=<%=i%> name="deletebutton" type="submit">Delete</button>
+            </form>
         </li>
         <% } %>
     </ul>
@@ -41,22 +47,6 @@
           </div>
         </a>
        </div>
-    <div class="container blogs-cont">
-
-        <h3>Update or delete blog</h3>
-                
-        <form method="post" action="/updatepost" class="update-delete">
-        <label for="blognumber">Blog number to be updated:</label>
-        <input type="text" name="blogNumber" id="blognumber" / required>
-         <button class="btn btn-secondary" type="submit">Update</button>
-        </form>
-       
-       <form method="post" action="/delete" class="update-delete">
-        <label for="blognumber1">Blog number to be deleted:</label>
-        <input type="text" name="blogNumber" id="blognumber1" / required>
-        <button class="btn btn-secondary" type="submit">Delete</button>
-       </form>
-      </div>
 </div>
 <% } %>
 

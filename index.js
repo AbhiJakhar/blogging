@@ -22,14 +22,15 @@ app.get("/create",(req,res)=> {
     res.render("create.ejs",{titles:titles,description:description});
 })
 app.post('/updatepost', (req, res) => {
-    clickedIndex=req.body.blogNumber;
+    //console.log(req.body);
+    clickedIndex=req.body.updatebutton;
     res.render("update.ejs",{titles:titles,description:description,clickedIndex:clickedIndex});
     
 });
 app.post('/delete', (req, res) => {
-    let deleteclickedIndex=req.body.blogNumber;
-    titles.splice(deleteclickedIndex-1,1);
-    description.splice(deleteclickedIndex-1,1);
+    let deleteclickedIndex=req.body.deletebutton;
+    titles.splice(deleteclickedIndex,1);
+    description.splice(deleteclickedIndex,1);
     res.render("index.ejs",{titles:titles,description:description});
     
 });

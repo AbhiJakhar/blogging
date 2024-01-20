@@ -115,7 +115,8 @@ ul{
 }
 
 .update-delete{
-    padding-bottom: 20px;
+    padding-bottom: 50px;
+    display: inline-block;
 }
 
 #blognumber{
@@ -128,3 +129,9 @@ ul{
     margin-left: 10px;
     width: 50px;
 }
+
+
+footer {
+    
+    bottom: 0;
+  }
