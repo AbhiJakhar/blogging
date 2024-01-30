@@ -5,7 +5,7 @@
     <div class="text-center noblog-cont">
     <div class="row"> 
     <div class="col-lg-4">
-         <h1 class="noblog-h1">No blogs to show. Create one?</h1>
+         <h1 class="noblog-h1">You haven't created a blog yet. Create one?</h1>
          <br>
          <div class="d-grid gap-2 col-6 mx-auto">
           <a href="/create">
@@ -33,6 +33,13 @@
             <div class="pretext">
             <p><%= blog.blog_description %></p>
           </div>
+            <br>
+            <form method="post" action="/updatepost" class="update-delete">
+            <button class="btn btn-secondary" value=<%=blog.id%> name="updatebutton" type="submit" >Update</button>
+            </form>
+            <form method="post" action="/delete" class="update-delete">
+            <button class="btn btn-secondary" value=<%=blog.id%> name="deletebutton" type="submit">Delete</button>
+            </form>
         </li>
         <% } %>
     </ul>

@@ -112,6 +112,12 @@ ul{
 
 .blogs-cont {
     padding-top: 50px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.pretext{
+    white-space: pre-wrap;
 }
 
 .update-delete{
